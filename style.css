@@ -1,0 +1,448 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: #f4f6fc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* Contenedor principal */
+.container {
+  display: flex;
+  max-width: 1200px;
+  width: 100%;
+  gap: 40px;
+  padding: 40px;
+}
+
+/* Panel izquierdo con figuras */
+.left-panel {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.shapes {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+/* Figura base */
+.shape {
+  opacity: 0;
+  transform: scale(0.8) translateY(20px);
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+/* Hemisfera rosa pastel claro */
+.shape-hemisphere {
+  width: 120px;
+  height: 60px;
+  background: #f8cdd3;
+  border-top-left-radius: 120px;
+  border-top-right-radius: 120px;
+}
+
+/* Figura amarilla circular */
+.shape3 {
+  width: 100px;
+  height: 100px;
+  background: #f9e79f;
+  border-radius: 50%;
+}
+
+/* Rectángulo morado delgado */
+.shape--thin {
+  width: 50px;
+  height: 130px;
+  background: #b39ddb;
+  border-radius: 10px;
+}
+
+/* Rectángulo verde delgado */
+.shape-rect-thin {
+  width: 40px;
+  height: 100px;
+  background: #a5d6a7;
+  border-radius: 6px;
+}
+
+/* Ojos y boca */
+
+.eyes {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20%;
+  margin-top: 10px;
+}
+
+.eye {
+  width: 10px;
+  height: 10px;
+  background: #333;
+  border-radius: 50%;
+}
+
+.mouth {
+  width: 20px;
+  height: 10px;
+  background: #333;
+  border-radius: 0 0 15px 15px;
+  margin: 10px auto 0;
+}
+
+/* Panel derecho con login */
+.right-panel {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-box {
+  background: white;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.1);
+  width: 100%;
+  max-width: 400px;
+}
+
+.login-box h1 {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.login-box p {
+  margin-bottom: 20px;
+  color: #555;
+}
+
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.password-wrapper {
+  position: relative;
+}
+
+.toggle-password {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+.options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.login-btn {
+  width: 100%;
+  padding: 12px;
+  background: #6c63ff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.google-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 10px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+/* Logo más pequeño */
+.google-icon {
+  width: 18px;
+  height: 18px;
+}
+
+/* Texto en recuadro ovalado */
+.google-text {
+  padding: px 12px;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 500;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  white-space: nowrap;
+}
+
+.signup {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 14px;
+}
+.password-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.password-wrapper input {
+  flex: 1;
+  padding-right: 40px; /* espacio reservado para el icono */
+}
+
+.toggle-password {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 24px;
+  height: 24px;
+}
+
+.eye-icon {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+/* Animación segura de giro sin romper transformaciones previas */
+@keyframes flipYsafe {
+  0%   { transform: perspective(600px) rotateY(0deg); }
+  50%  { transform: perspective(600px) rotateY(180deg); }
+  100% { transform: perspective(600px) rotateY(0deg); }
+}
+input[type="password"],
+input[type="text"]#password {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  transition: none; /* evita animaciones indeseadas */
+  height: 44px; /* fija altura para evitar saltos */
+  box-sizing: border-box;
+}
+/* Boca neutral */
+.mouth {
+  width: 20px;
+  height: 10px;
+  background: #333;
+  border-radius: 0 0 15px 15px;
+  margin: 10px auto 0;
+  transition: all 0.3s ease;
+}
+
+/* Boca sonriente */
+.mouth.smile {
+  border-radius: 50%;
+  height: 6px;
+  width: 30px;
+}
+
+/* Parpadeo */
+.eye.blink {
+  animation: blink 0.2s ease-in-out;
+}
+
+@keyframes blink {
+  0% { transform: scaleY(1); }
+  50% { transform: scaleY(0.1); }
+  100% { transform: scaleY(1); }
+}
+.login-box.fade-out {
+  animation: fadeOut 0.6s ease forwards;
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+}
+
+body.success-bg {
+  background: linear-gradient(to right, #f8cdd3, #f9e79f);
+  transition: background 0.6s ease;
+}
+/* Boca neutral tipo ._. */
+.mouth.dot-neutral {
+  width: 6px;
+  height: 6px;
+  background: #333;
+  border-radius: 50%;
+  margin: 10px auto 0;
+  transition: all 0.3s ease;
+}
+
+/* Boca sonriente */
+.mouth.smile {
+  border-radius: 50%;
+  height: 6px;
+  width: 30px;
+  transition: all 0.3s ease;
+}
+
+/* Parpadeo */
+.eye.blink {
+  animation: blink 0.2s ease-in-out;
+}
+
+@keyframes blink {
+  0% { transform: scaleY(1); }
+  50% { transform: scaleY(0.1); }
+  100% { transform: scaleY(1); }
+}
+
+/* Parpadeo continuo */
+@keyframes blinkLoop {
+  0%, 100% { transform: scaleY(1); }
+  45% { transform: scaleY(); }
+  50% { transform: scaleY(0.1); }
+  55% { transform: scaleY(1); }
+}
+
+.eye.blinking {
+  animation: blinkLoop 2s infinite ease-in-out;
+  transform-origin: center;
+}
+
+/* Ojos y boca */
+.eyes {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20%;
+  margin-top: 10px;
+}
+
+.eye {
+  width: 10px;
+  height: 10px;
+  background: #333;
+  border-radius: 50%;
+  transition: transform 0.1s ease;
+}
+
+/* Parpadeo continuo */
+@keyframes blinkLoop {
+  0%, 100% { scale: 1; }
+  45% { scale: 1 ; }
+  50% { scale: 1 0.1; }
+  55% { scale: 1; }
+}
+
+.eye.blinking {
+  animation: blinkLoop 2s infinite ease-in-out;
+  transform-origin: center;
+}
+
+/* Boca neutral tipo ._. */
+.mouth.dot-neutral {
+  width: 6px;
+  height: 6px;
+  background: #333;
+  border-radius: 50%;
+  margin: 10px auto 0;
+  transition: all 0.1s ease;
+}
+
+/* Boca sonriente */
+.mouth.smile {
+  border-radius: 50%;
+  height: 6px;
+  width: 30px;
+  transition: all 0.3s ease;
+}
+
+/* Contenedor centrado */
+.google-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 12px;
+}
+
+/* Botón ajustado al contenido */
+.google-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+/* Logo pequeño */
+.google-icon {
+  width: 18px;
+  height: 18px;
+}
+
+/* Texto en recuadro ovalado */
+.google-pill {
+  padding: 6px 14px;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 500;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  white-space: nowrap;
+}
+/* Evita que el cursor de texto aparezca en zonas no interactivas */
+body, .container, .left-panel, .right-panel {
+  cursor: default;
+  user-select: none;
+}
+
+/* Permitir selección y cursor en campos de texto */
+input,
+textarea,
+button,
+a,
+label {
+  user-select: text;
+  cursor: text;
+}
+/* Evita cursor de texto en enlaces no editables */
+a, .signup a {
+  cursor: pointer;
+  user-select: none;
+}
+.google-btn,
+.google-btn * {
+  cursor: pointer;
+  user-select: none;
+}
+/* Evita cursor de texto y selección en checkbox y su texto */
+.options label,
+.options input[type="checkbox"] {
+  cursor: pointer;
+  user-select: none;
+}

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sam Login – Animaciones</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div class="container">
+    <!-- Panel izquierdo con figuras -->
+    <div class="left-panel">
+      <div class="shapes">
+        <div class="shape shape-hemisphere">
+          <div class="eyes">
+            <div class="eye left"></div>
+            <div class="eye right"></div>
+          </div>
+          <div class="mouth"></div>
+        </div>
+
+        <div class="shape shape3">
+          <div class="eyes">
+            <div class="eye left"></div>
+            <div class="eye right"></div>
+          </div>
+          <div class="mouth"></div>
+        </div>
+
+        <div class="shape shape--thin">
+          <div class="eyes">
+            <div class="eye left"></div>
+            <div class="eye right"></div>
+          </div>
+          <div class="mouth"></div>
+        </div>
+
+        <div class="shape shape-rect-thin">
+          <div class="eyes">
+            <div class="eye left"></div>
+            <div class="eye right"></div>
+          </div>
+          <div class="mouth"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Panel derecho con login -->
+    <div class="right-panel">
+      <div class="login-box">
+        <div class="logo"></div>
+        <h1>¡Bienvenido, mi nombre es Sam!</h1>
+        <p>Por favor, ingresa tu correo y contraseña</p>
+        <form id="loginForm">
+          <input type="email" id="email" placeholder="Correo electrónico" required />
+
+          <div class="password-wrapper">
+            <input type="password" id="password" placeholder="Contraseña" required />
+            <span class="toggle-password" id="togglePwd">
+              <svg id="eyeOpen" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M2.458 12C3.732 7.943 7.523 5 12 5c4.477 0 8.268 2.943 9.542 7-1.274 4.057-5.065 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+              </svg>
+
+              <svg id="eyeClosed" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" style="display: none;">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M13.875 18.825A10.05 10.05 0 0112 19c-4.477 0-8.268-2.943-9.542-7a9.956 9.956 0 012.442-4.362M6.634 6.634A9.956 9.956 0 0112 5c4.477 0 8.268 2.943 9.542 7a9.956 9.956 0 01-4.132 5.132M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M3 3l18 18" />
+              </svg>
+            </span>
+          </div>
+
+          <div class="options">
+            <label><input type="checkbox" checked /> Recordarme por 30 días</label>
+            <a href="#">Olvidé mi contraseña</a>
+          </div>
+          
+
+          <button type="submit" class="login-btn">Iniciar sesión</button>
+
+         <div class="google-wrapper">
+  <button type="button" class="google-btn">
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg" alt="Google logo" class="google-icon"/>
+    <span class="google-pill">Ingresar con Google</span>
+  </button>
+</div>
+        </form>
+
+        <p class="signup">¿No tienes una cuenta? <a href="#">Crear cuenta nueva</a></p>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
